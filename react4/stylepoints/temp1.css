@@ -1,0 +1,228 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('background.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+}
+
+/* Container */
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #d6dde7;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+}
+
+/* Left Section */
+.left-section {
+    width: 40%;
+    padding: 20px;
+}
+
+.profile-image {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #E5E5E5;
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+h2 {
+    text-align: center;
+    font-size: 18px;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.profile-section, .skills-section {
+    margin-bottom: 30px;
+}
+
+.profile-section h3, .skills-section h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.profile-section p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.skill {
+    margin-bottom: 10px;
+}
+
+.skill p {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 5px;
+    background: #E5E5E5;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.skill-bar .filled {
+    height: 100%;
+    background: #A084CA;
+}
+
+/* Right Section */
+.right-section {
+    width: 55%;
+    padding: 20px;
+    background-color: #eaeef5;
+    border-radius: 10px;
+}
+
+.experience-section, .contact-section, .education-section {
+    margin-bottom: 30px;
+}
+
+.experience-section h3, .contact-section h3, .education-section h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.experience-section ul, .education-section ul {
+    list-style: none;
+}
+
+.experience-section li, .education-section li {
+    margin-bottom: 15px;
+}
+
+.experience-section li strong, .education-section li strong {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.contact-section p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.button {
+    align-items: center;
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Pastikan elemen ini memiliki tinggi penuh */
+    position: relative; /* Memungkinkan positioning relatif di dalamnya */
+    gap: 20px;
+    padding-bottom: 100px;
+  }
+  
+  #saveAsImage {
+    background-color: #d6dde7;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  #saveAsImage:hover {
+    background-color: #c0c9d6;
+    transform: translateY(-2px);
+  }
+  
+  #saveAsImage:active {
+    background-color: #b0bbc8;
+    transform: translateY(2px);
+  }
+  
+  #editbaten {
+    background-color: #d6dde7;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  #editbaten:hover {
+    background-color: #c0c9d6;
+    transform: translateY(-2px);
+  }
+  
+  #editbaten:active {
+    background-color: #b0bbc8;
+    transform: translateY(2px);
+  }
+
+  .button-wrapper2 {
+    display: flex;
+    left: 40px;
+    top: 20px;
+    position: relative; /* Memungkinkan positioning relatif di dalamnya */
+  }
+
+  #backtohome {
+    background-color: #d6dde7; /* Warna latar belakang */
+    border: none; /* Hilangkan border hitam */
+    border-radius: 50%; /* Membuat tombol berbentuk lingkaran */
+    font-size: 39px; /* Ukuran font */
+    color: #4A4A4A; /* Warna teks */
+    cursor: pointer; /* Pointer saat diarahkan */
+    padding: 10px; /* Ruang di sekitar teks */
+    transition: all 0.3s ease; /* Animasi transisi */
+    display: flex; /* Flexbox untuk pusat */
+    align-items: center; /* Vertikal tengah */
+    justify-content: center; /* Horizontal tengah */
+    box-shadow: none; /* Hilangkan bayangan */
+}
+
+#backtohome .arrow {
+    font-family: Arial, sans-serif; /* Font lebih rapi */
+    font-weight: bold; /* Tambahkan ketebalan */
+}
+
+#backtohome:hover {
+    color: #8AAEDA; /* Warna teks saat hover */
+    transform: scale(1.1); /* Perbesar sedikit */
+}
+
+#backtohome:active {
+    transform: scale(0.95); /* Efek klik */
+}
+

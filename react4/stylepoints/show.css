@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Untuk memastikan konten berada di tengah secara horizontal */
+  background-color: #f4f4f4;
+  min-height: 100vh;
+}
+
+#container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+/* Grid utama */
+.cv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tetap 3 kolom */
+  gap: 30px;
+  width: 100%;
+  max-width: 1300px; /* Lebarkan area grid */
+  margin: 0 auto; /* Pastikan grid di tengah */
+}
+
+.cv-card {
+  background-color: white;
+  padding: 25px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cv-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.btn-create {
+  display: block;
+  margin: 40px auto;
+  padding: 18px 35px;
+  font-size: 18px;
+  background-color: #932a2a;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* Heading */
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .cv-grid {
+    grid-template-columns: repeat(2, 1fr); /* Ubah ke 2 kolom */
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cv-grid {
+    grid-template-columns: 1fr; /* Ubah ke 1 kolom */
+  }
+  .btn-create {
+    padding: 12px 25px;
+    font-size: 16px;
+  }
+}

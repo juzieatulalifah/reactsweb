@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: rgb(232, 232, 232);
+    color: #333;
+  }
+  
+  .profilecircle {
+    display: flex;
+    border-radius: 50%; /* Makes it circular */
+    width: 100px; /* Set width and height to the same value */
+    height: 100px; /* Ensures it's always a circle */
+    margin: 0.2rem 0.5rem; /* Adjust spacing */
+    background-color: #ffffff;
+    position: absolute;
+    aspect-ratio: 1 / 1;
+    overflow: hidden; /* Ensures content inside the circle stays contained */
+  }
+
+  #hamburgerMenu {
+    display: none; /* Hidden until screen width is small */
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000; /* Above everything else */
+    background-color: #434343;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-size: 1.5rem;
+}
+
+
+  /* FAQ Container */
+  .faq-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+    background: #FFFFFF;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  /* Header */
+  .faq-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .faq-header h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #1E293B;
+  }
+  
+  .faq-search {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+  }
+  
+  .faq-search input {
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+  }
+  
+  .faq-search button {
+    padding: 10px 15px;
+    background: #F97316;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Navigation */
+  .faq-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .faq-nav a {
+    text-decoration: none;
+    color: #1E293B;
+    margin-right: 15px;
+  }
+  
+  .faq-nav a.active {
+    font-weight: bold;
+    color: #F97316;
+  }
+  
+  /* FAQ Content */
+  .faq-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .faq-list {
+    width: 60%;
+  }
+  
+  .faq-image {
+    margin-right: 40px;
+    margin-top: 50px;
+    height: 350px;
+    width: 350px;
+  }
+
+  .faq-image img {
+    max-width: 100%;
+  }
+  
+
+/* FAQ Items */
+.faq-item {
+  background: #F9FAFB;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid #E5E7EB;
+  transition: background 0.3s, transform 0.5s ease-in-out; 
+}
+
+.faq-item:hover {
+  background: #EDE9FE;
+  transform: scale(1.02); 
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.faq-answer {
+  display: none;
+  margin-top: 10px;
+  color: #4B5563;
+  transition: max-height 0.5s ease-in-out; 
+  overflow: hidden;
+}
+
+/* Active State */
+.faq-item.active {
+  background: #434343;
+  transform: scale(1.02);
+}
+
+.faq-item.active .faq-question {
+  color: #FFFFFF;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+  max-height: 500px; 
+  color: #FFFFFF;
+}
+
+/* Responsive untuk layar lebih kecil dari 768px */
+@media (max-width: 768px) {
+    .faq-container {
+      padding: 15px;
+    }
+  
+    .faq-header h1 {
+      font-size: 24px;
+    }
+  
+    .faq-search input {
+      width: 80%;
+    }
+  
+    .faq-search button {
+      padding: 10px;
+      font-size: 14px;
+    }
+  
+    .faq-content {
+      flex-direction: column; /* Atur menjadi kolom */
+      align-items: center; /* Pusatkan konten */
+    }
+  
+    .faq-list {
+      width: 100%;
+    }
+  
+    .faq-image {
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    #hamburgerMenu {
+        display: block; /* Show hamburger menu */
+    }
+
+    .faq-image img {
+      width: 80%; /* Kurangi ukuran gambar */
+    }
+  }
+  
+
+  /* Responsive untuk layar lebih kecil dari 480px */
+  @media (max-width: 480px) {
+    .faq-header h1 {
+      font-size: 20px;
+    }
+  
+    .faq-search input {
+      width: 100%; /* Input full-width */
+    }
+  
+    .faq-search button {
+      width: 100%; /* Tombol full-width */
+      font-size: 12px;
+    }
+  
+    .faq-item {
+      font-size: 14px; /* Kurangi ukuran font */
+      padding: 10px; /* Kurangi padding */
+    }
+  
+    .faq-answer {
+      font-size: 13px; /* Sesuaikan ukuran teks jawaban */
+    }
+  }
+  

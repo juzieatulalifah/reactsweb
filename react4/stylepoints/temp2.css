@@ -1,0 +1,249 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #ffffff; /* Warna latar belakang utama */
+    padding: 20px;
+}
+
+.resume-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff1f1; /* Warna latar belakang container */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 60px 20px 20px 30px;
+    min-height: 800px; /* Tinggi minimum */
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #F0A8D0; /* Warna heading utama */
+}
+
+.header p {
+    font-size: 18px;
+    color: #F7B5CA; /* Warna teks deskripsi */
+}
+
+.main-content {
+    display: flex;
+    gap: 20px;
+}
+
+.left-column, .right-column {
+    flex: 1;
+}
+
+.left-column {
+    border-right: 1px solid #FFEBD4; /* Warna garis pembatas */
+    padding-right: 20px;
+}
+
+.right-column {
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-right: 20px;
+    background-color: rgb(255, 255, 255);
+    margin-right: 30px;
+}
+
+.profile-image {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-image img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.contact, .education, .skills {
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 18px;
+    color: #F0A8D0; /* Warna heading bagian */
+    margin-bottom: 10px;
+    border-bottom: 2px solid #F7B5CA; /* Warna garis bawah heading */
+    display: inline-block;
+}
+
+p, ul {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #4A4A4A; /* Warna teks konten */
+}
+
+ul {
+    list-style: none;
+    padding-left: 15px;
+}
+
+ul li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 5px;
+}
+
+ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #F0A8D0; /* Warna titik */
+}
+
+.right-column .about, .right-column .work-experience {
+    margin-bottom: 20px;
+}
+
+.contact {
+    margin-top: 10px;
+}
+
+.work-experience p {
+    margin-bottom: 10px;
+}
+
+.resume-container .section {
+    margin-bottom: 20px; /* Jarak antar bagian */
+}
+
+.resume-container h3 {
+    font-size: 20px;
+    color: #F0A8D0; /* Warna heading bagian */
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #FFC6C6; /* Warna garis bawah heading */
+    display: inline-block;
+}
+
+.resume-container ul {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.resume-container ul li {
+    line-height: 1.8;
+    color: #555; /* Warna teks list */
+}
+
+.education {
+    margin-left: 30px;
+}
+
+.skills {
+    margin-left: 30px;
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Pastikan elemen ini memiliki tinggi penuh */
+    position: relative; /* Memungkinkan positioning relatif di dalamnya */
+    gap: 20px;
+    padding-bottom: 70px;
+  }
+
+#saveAsImage {
+    background-color: #F7B5CA;
+    color: #fff; /* Warna teks putih */
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 20px;
+  }
+  
+  #saveAsImage:hover {
+    background-color: #e99db6; /* Warna lebih gelap saat hover */
+    transform: translateY(-2px); /* Efek sedikit melayang */
+  }
+  
+  #saveAsImage:active {
+    background-color: #d8859e; /* Warna lebih gelap saat ditekan */
+    transform: translateY(1px); /* Efek menekan */
+  }
+  
+  #editbaten {
+    background-color: #F7B5CA;
+    color: #fff; /* Warna teks putih */
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 20px;
+}
+
+#editbaten:hover {
+    background-color: #e99db6; /* Warna lebih gelap saat hover */
+    transform: translateY(-2px); /* Efek sedikit melayang */
+}
+
+#editbaten:active {
+    background-color: #d8859e; /* Warna lebih gelap saat ditekan */
+    transform: translateY(1px); /* Efek menekan */
+}
+
+.button-wrapper2 {
+    display: flex;
+    left: 40px;
+    top: 20px;
+    position: relative;
+}
+
+#backtohome {
+    background-color: #F7B5CA; /* Latar belakang pink */
+    border: none;
+    border-radius: 50%;
+    font-size: 39px;
+    color: #FFFFFF; /* Warna panah putih */
+    cursor: pointer;
+    padding: 10px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none;
+}
+
+#backtohome .arrow {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+#backtohome:hover {
+    background-color: #E79DAC; /* Warna sedikit lebih gelap saat hover */
+    transform: scale(1.1);
+}
+
+#backtohome:active {
+    transform: scale(0.95);
+}

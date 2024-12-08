@@ -1,0 +1,794 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(232, 232, 232);
+    transition: background-color .5s;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+
+.profilecircle {
+    display: flex;
+    border-radius: 50%; /* Makes it circular */
+    width: 100px; /* Set width and height to the same value */
+    height: 100px; /* Ensures it's always a circle */
+    margin: 0.2rem 0.5rem; /* Adjust spacing */
+    background-color: #ffffff;
+    position: absolute;
+    aspect-ratio: 1 / 1;
+    overflow: hidden; /* Ensures content inside the circle stays contained */
+}
+
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    visibility: hidden;
+    z-index: 998;
+    opacity: 0;
+    transition: opacity 0.8 ease;
+}
+
+#overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/*Navimachine*/
+
+#sidebar {
+    display: flex;
+    position: fixed;
+    border: 1px black;
+    top: 0;
+    left: -15vw;
+    height: 100vh;
+    width: 17vw;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    background-color: #434343;
+    transition: left 0.3s ease;
+    z-index: 999;
+}
+
+#sidebar.active {
+    left: 0;
+}
+
+.navbar-item {
+    position: relative;
+    background-color: #434343;
+    display: flex;
+    width: 9vw;
+    margin: 0.438rem 0rem;
+    transition: width 0.3s;
+    align-items: center;
+}
+
+#navbar-text {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 16px;
+    position: relative;
+    display: flex;
+    margin: 0.438rem 1.6rem;
+    font-family: "Poppins", sans-serif;
+}
+
+
+#navbar-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#copyright {
+    display: flex;
+    position: absolute;
+    top:100vh;
+    transform:translateY(-100%);
+}
+
+.loginbar {
+    display: flex;
+    position: relative;
+    border: 1px rgb(232, 232, 232);
+    height: 8.5vh;
+    width: 12vw;
+    margin: 1rem 1rem;
+    background-color: transparent;
+}
+
+.profilecircle {
+    display: flex;
+    border-radius: 100px;
+    height: 8vh;
+    width: 4vw;
+    margin: 0.2rem 0.5rem;
+    background-color: #ffffff;
+    position: absolute;
+}
+
+.loginbutton {
+    display: flex;
+    position: relative;
+    text-decoration: none;
+    color: #ffffff;
+    top: 26px;
+    left: 100px;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+}
+
+.navbar-item:hover {
+    background-color: #861010;
+    width: 15.01vw;
+
+}
+
+/*sidebar buttonr*/
+#toggleSidebar {
+    background-color: #434343;
+    display: flex;
+    position: absolute;
+    right: -25px; /* Positioned to the right edge of the sidebar */
+    top: 0;
+    width: 3vw; /* Thin width for the clickable area */
+    height: 100%;
+    cursor: pointer;
+    border: transparent;
+    border-radius: 100px;
+}
+
+/*Sidebar Icons*/
+
+.fa-street-view{
+    font-size: 20px;
+    position: absolute;
+    display: flex;
+    color: #ffffff;
+    top: 5vb;
+    left: 1.7vb;
+    transition: all 0.3s ease;
+}
+
+.fa-home{
+    font-size: 20px;
+    position: absolute;
+    display: flex;
+    color: #ffffff;
+    top: 13vb;
+    left: 1.5vb;
+        transition: all 0.3s ease;
+}
+
+.fa-puzzle-piece{
+    font-size: 20px;
+    position: absolute;
+    display: flex;
+    color: #ffffff;
+    top: 19vb;
+    left: 1.7vb;
+    transition: all 0.3s ease;
+}
+
+.fa-question {
+    font-size: 20px;
+    position: absolute;
+    display: flex;
+    color: #ffffff;
+    top: 25vb;
+    left: 1.7vb;
+    transition: all 0.3s ease;
+}
+
+.fa-id-badge {
+    font-size: 20px;
+    position: absolute;
+    display: flex;
+    color: #ffffff;
+    top: 30.6vb;
+    left: 1.7vb;
+    transition: all 0.3s ease;
+}
+
+.fa-info {
+    font-size: 20px;
+    position: absolute;
+    display: flex;
+    color: #ffffff;
+    top: 37vb;
+    left: 2vb;
+    transition: all 0.3s ease;
+}
+
+.fa-angle-left {
+    font-size: 20px;
+    position: absolute;
+    display: flex;
+    color: #ffffff;
+    top: 47vb;
+    left: 2vb;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.hide-icons {
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.hide-arrow.fa-angle-left {
+    opacity: 100;
+    transition: all 0.3s ease;
+}
+
+/*section*/
+#mainpage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: auto;
+}
+
+
+/*main container*/
+.container1 {
+    display: flex;
+    width: 60vw;
+    height: 80vh;
+    background-color: #434343;
+    box-shadow: 10px 10px rgb(0, 0, 0);
+}
+
+.container1_1 {
+    width: 20vw;
+    position: static;
+    height: 80vh;
+    background-image: linear-gradient(to left, #ea2424, #861010);
+    padding-top: 90px;
+    text-align: center;
+    line-height: 1.8;
+    margin-right: 50px;
+}
+
+.container1_1 .profpic {
+    width: 20vw;
+    height: 20vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.container1_1 .profpic img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    border-radius: 50%;
+}
+
+
+.container1_1 h1 {
+    font-family: "Lato", sans-serif ;
+    font-weight: 550;
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.container1_1 p {
+    font-family: "Lato", sans-serif ;
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 13rem;
+}
+
+.container1_1 a {
+    text-decoration: none;
+    font-size: 3rem;
+    color: #ffffff;
+}
+
+.container1_2 {
+    margin-top: 40px;
+    width: 35.1vw;
+    height: 40vh;
+    background-image: linear-gradient(to right, #ea2424, #861010);
+    padding-top: 40px;
+    padding-left: 30px;
+}
+
+.container1_2 p {
+    font-family: "Lato", sans-serif ;
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: #ffffff;
+    line-height: 2.8;
+}
+
+.container1_3 {
+    top: 58vh;
+    left: 42.2vw;
+    background-image: linear-gradient(to bottom, #ea2424, #861010);
+    height: 20vh;
+    width: 35.1vw;
+    position: absolute;
+    padding-top: 25px;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container1_3 h2 {
+    margin-bottom: 5px;
+    font-family: "Lato", sans-serif ;
+    font-weight: 550;
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.innercontainer1_3 {
+    position: absolute;
+    height: 5vh;
+    width: 4vw;
+    left: 30%;
+    padding: 20px;
+}
+
+.container1_3 span {
+    font-family: "Lato", sans-serif ;
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: #ffffff;
+    line-height: 1.8;
+    background-color: #861010;
+    padding: 4px 4px 4px 4px;
+}
+
+.logout{
+    position: absolute;
+    background-image: linear-gradient(to right, #434343, #6b6b6b);
+    font-family: "Lato", sans-serif ;
+    top: 46.5rem;
+    right: 64rem;
+    font-size: 1.2rem;
+    padding: 7px 7px 7px 7px;
+    color: #ffffff;
+    border-radius: 40px;
+    margin-top: 20px;
+}
+
+.edit{
+    position: absolute;
+    background-image: linear-gradient(to right, #434343, #6b6b6b);
+    font-family: "Lato", sans-serif ;
+    top: 46.5rem;
+    right: 60rem;
+    font-size: 1.2rem;
+    padding: 7px 7px 7px 7px;
+    color: #ffffff;
+    border-radius: 40px;
+    margin-top: 20px;
+}
+
+
+input[readonly] {
+    background-color: #333333;
+    color: #f4f4f4;
+    border: none;
+    pointer-events: none;
+    padding : 5px;
+}
+
+#preview {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+}
+  
+.upload-area {
+    border: 2px dashed #ccc;
+    border-radius: 50%; /* Bentuk lingkaran */
+    text-align: center;
+    padding: 0; /* Hilangkan padding untuk keselarasan */
+    width: 100px; /* Sesuaikan dengan ukuran lingkaran */
+    height: 100px; /* Sesuaikan dengan ukuran lingkaran */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.3s;
+    cursor: pointer;
+    overflow: hidden; /* Pastikan gambar tidak keluar dari lingkaran */
+    background-color: #f9f9f9; /* Warna latar belakang default */
+}
+
+.upload-area.dragging {
+    border-color: #00bfff; /* Warna garis saat dragging */
+    background-color: #f0f8ff; /* Latar saat dragging */
+}
+
+.upload-area img.preview-image {
+    width: 100%; /* Pastikan gambar mengisi area */
+    height: 100%; /* Pastikan gambar mengisi area */
+    object-fit: cover; /* Jaga proporsi gambar */
+    /* border-radius: 50; Sesuaikan dengan bentuk lingkaran */
+}
+
+  .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .form-group label {
+    width: 150px;
+    margin-right: 10px;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  .form-group input {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    background-color: #333;
+    border-radius: 4px;
+    font-size: 14px;
+    color: white;
+  }
+
+  #drag-text {
+    font-size: 10px;
+  }
+
+  @media (max-width: 768px) {
+
+    .container1 {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        margin: 20px 0;
+    }
+
+    /* Profil bagian kiri */
+    .container1_1 {
+        width: 100%;
+        margin-right: 0;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .container1_1 .profpic img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .container1_1 h1 {
+        font-size: 1.2rem;
+    }
+
+    .container1_1 p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    /* Kontainer kanan atas */
+    .container1_2 {
+        width: 100%;
+        margin-top: 20px;
+        padding: 20px;
+    }
+
+    .container1_2 p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    /* Kontainer kanan bawah */
+    .container1_3 {
+        width: 100%;
+        margin-top: 20px;
+        padding: 20px;
+    }
+
+    .container1_3 h2 {
+        font-size: 1.2rem;
+    }
+
+    .container1_3 span {
+        font-size: 0.9rem;
+        padding: 3px;
+    }
+
+    /* Tombol Logout dan Edit */
+    .logout, .edit {
+        position: static;
+        margin: 10px auto;
+        padding: 8px 12px;
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    /* Profil circle */
+    .profilecircle {
+        width: 80px;
+        height: 80px;
+    }
+
+    /* Area unggahan */
+    .upload-area {
+        width: 80px;
+        height: 80px;
+    }
+
+    .upload-area img.preview-image {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Teks tombol login */
+    .loginbutton {
+        font-size: 12px;
+        top: 20px;
+        left: 50px;
+    }
+}
+/* 
+@media (max-width: 768px) {
+
+    .container1_1 .profpic {
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        height: 150px; 
+        width: 100%; 
+        margin: 0 auto; 
+    }
+
+    .container1_1 .profpic img {
+        width: 80px; 
+        height: 80px; 
+        object-fit: cover; 
+        border-radius: 50%; 
+    }
+    
+    .container1 {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        margin: 20px 0;
+    }
+
+
+    .container1_1, 
+    .container1_2
+    .container1_3 
+    {
+        width: 100%;
+        height: auto;
+        margin: 10px 0;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .container1_1 .profpic img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .container1_1 h1, 
+    .container1_3 h2 {
+        font-size: 1.2rem;
+    }
+
+    .container1_1 p, 
+    .container1_3 span,
+    .container1_2 p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .logout, 
+    .edit {
+        position: static;
+        margin: 10px auto;
+        padding: 10px 15px;
+        font-size: 0.9rem;
+        text-align: center;
+        width: auto;
+    } 
+
+    .profilecircle {
+        width: 80px;
+        height: 80px;
+    }
+
+    .upload-area {
+        width: 80px;
+        height: 80px;
+    }
+
+    .upload-area img.preview-image {
+        width: 100%;
+        height: 100%;
+    }
+
+    .loginbutton {
+        font-size: 12px;
+        top: auto;
+        left: auto;
+    } 
+
+    #navbar-text {
+        font-size: 12px;
+    }
+
+    
+}
+ */
+ @media (max-width: 768px) {
+
+    /* Styling untuk container1 */
+    .container1 {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        margin: 20px 0;
+    }
+
+    /* Styling untuk container1_1 */
+    .container1_1 {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        margin-bottom: 20px; /* Tambahkan jarak bawah */
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .container1_1 .profpic {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 150px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .container1_1 .profpic img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .container1_1 h1 {
+        font-size: 1.2rem;
+        margin-top: 10px;
+    }
+
+    .container1_1 p {
+        font-size: 0.9rem;
+        margin: 5px 0;
+    }
+
+    /* Styling untuk container1_2 */
+    .container1_2 {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        margin-bottom: 20px; /* Jarak antara container1_2 dan container1_3 */
+        text-align: center;
+        box-sizing: border-box;
+        background-color: #f9f9f9; /* Opsional: untuk membedakan */
+    }
+
+    .container1_2 p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .container1_2 .form-group {
+        margin: 10px 0;
+    }
+
+    /* Styling untuk container1_3 */
+    /* .container1_3 {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        margin-top: 20px; 
+        text-align: center;
+        box-sizing: border-box;
+        background-color: #f0f0f0; 
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+    } */
+
+    .container1_3 {
+        position: static; /* Menghapus posisi absolut */
+        width: 100%; /* Sesuaikan lebar */
+        height: auto; /* Sesuaikan tinggi */
+        padding: 20px;
+        margin-top: 20px; /* Tambahkan jarak dari elemen di atasnya */
+        text-align: center; /* Pusatkan teks */
+        box-sizing: border-box; /* Pastikan padding termasuk dalam dimensi */
+        background-color: #f0f0f0; /* Opsional, warna background alternatif */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Pusatkan konten */
+    }
+
+    .container1_3 h2 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .container1_3 span {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin: 5px 0;
+    }
+
+    /* Styling untuk tombol */
+    .container1_4 {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly; /* Posisikan tombol merata */
+        margin: 20px 0;
+    }
+
+    .container1_4 button {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+
+    /* Styling untuk gambar preview di upload-area */
+    .upload-area {
+        width: 100%;
+        height: auto;
+        margin: 10px 0;
+    }
+
+    .upload-area img.preview-image {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .logout, 
+    .edit {
+        position: static;
+        margin: 10px auto;
+        /* padding: 10px 15px; */
+        font-size: 0.9rem;
+        text-align: center;
+        /* width: auto; */
+        margin-left: 10px;
+    } 
+
+}
